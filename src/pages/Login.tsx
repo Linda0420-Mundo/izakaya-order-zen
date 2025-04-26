@@ -1,0 +1,107 @@
+
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/components/ui/form';
+import { useForm } from 'react-hook-form';
+import { LogIn } from 'lucide-react';
+import Layout from '@/components/layout/Layout';
+
+interface LoginFormValues {
+  email: string;
+  password: string;
+}
+
+const Login = () => {
+  const navigate = useNavigate();
+  const form = useForm<LoginFormValues>();
+
+  const onSubmit = (data: LoginFormValues) => {
+    console.log(data);
+    // TODO: Implement login logic
+  };
+
+  return (
+    <Layout>
+      <div className="container max-w-md mx-auto px-4 py-8">
+        <div className="text-center mb-8">
+          <h1 className="text-3xl font-serif font-medium">Welcome Back</h1>
+          <p className="text-sm text-izakaya-darkgray mt-2">おかえりなさい</p>
+        </div>
+
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Email</FormLabel>
+                  <FormControl>
+                    <Input
+                      type="email"
+                      placeholder="Enter your email"
+                      className="bg-white"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="password"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Password</FormLabel>
+                  <FormControl>
+                    <Input
+                      type="password"
+                      placeholder="Enter your password"
+                      className="bg-white"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <Button
+              type="submit"
+              className="w-full bg-izakaya-vermilion hover:bg-izakaya-vermilion/90 text-white"
+            >
+              <LogIn className="w-4 h-4 mr-2" />
+              Sign In
+            </Button>
+          </form>
+        </Form>
+
+        <div className="mt-6 text-center space-y-4">
+          <p className="text-izakaya-darkgray text-sm">
+            Don't have an account?{' '}
+            <Button
+              variant="link"
+              className="text-izakaya-vermilion p-0"
+              onClick={() => navigate('/signup')}
+            >
+              Create Account
+            </Button>
+          </p>
+        </div>
+      </div>
+    </Layout>
+  );
+};
+
+export default Login;

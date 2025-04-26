@@ -15,6 +15,7 @@ import Cart from "./pages/Cart";
 import Favorites from "./pages/Favorites";
 import OrderHistory from "./pages/OrderHistory";
 import NotFound from "./pages/NotFound";
+import Login from "./pages/Login";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +34,7 @@ const App = () => (
               <Route path="/cart" element={<Cart />} />
               <Route path="/favorites" element={<Favorites />} />
               <Route path="/order-history" element={<OrderHistory />} />
+              <Route path="/login" element={<Login />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
