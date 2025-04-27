@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
@@ -50,14 +49,14 @@ const Payment = () => {
                   <RadioGroupItem value="credit-card" id="credit-card" />
                   <Label htmlFor="credit-card" className="flex-1 cursor-pointer">Credit Card</Label>
                   <div className="flex gap-2">
-                    <img src="https://source.unsplash.com/random/30x20/?visa" alt="Visa" className="h-5 w-8 object-contain" />
-                    <img src="https://source.unsplash.com/random/30x20/?mastercard" alt="Mastercard" className="h-5 w-8 object-contain" />
+                    <img src="https://byfood.b-cdn.net/api/public/assets/18915/content" alt="Visa" className="h-5 w-8 object-contain" />
+                    <img src="https://byfood.b-cdn.net/api/public/assets/18915/content" alt="Mastercard" className="h-5 w-8 object-contain" />
                   </div>
                 </div>
                 <div className="flex items-center space-x-2 border rounded-md p-3">
                   <RadioGroupItem value="apple-pay" id="apple-pay" />
                   <Label htmlFor="apple-pay" className="flex-1 cursor-pointer">Apple Pay</Label>
-                  <img src="https://source.unsplash.com/random/30x20/?applepay" alt="Apple Pay" className="h-5 w-8 object-contain" />
+                  <img src="https://byfood.b-cdn.net/api/public/assets/18915/content" alt="Apple Pay" className="h-5 w-8 object-contain" />
                 </div>
                 <div className="flex items-center space-x-2 border rounded-md p-3">
                   <RadioGroupItem value="google-pay" id="google-pay" />

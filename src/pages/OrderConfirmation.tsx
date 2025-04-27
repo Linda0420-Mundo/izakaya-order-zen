@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
@@ -33,7 +32,7 @@ const OrderConfirmation = () => {
           
           <div>
             <img 
-              src="https://source.unsplash.com/featured/?japanese,cooking" 
+              src="https://byfood.b-cdn.net/api/public/assets/18915/content" 
               alt="Chef preparing food" 
               className="w-full h-48 object-cover rounded-lg mb-4" 
             />
