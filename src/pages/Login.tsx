@@ -27,12 +27,20 @@ const Login = () => {
   const onSubmit = (data: LoginFormValues) => {
     console.log(data);
     // TODO: Implement login logic
+    navigate('/menu');
   };
 
   return (
     <Layout>
       <div className="container max-w-md mx-auto px-4 py-8">
         <div className="text-center mb-8">
+          <div className="mx-auto mb-6 w-28 h-28 rounded-full overflow-hidden border-4 border-izakaya-paper shadow-md">
+            <img 
+              src="https://source.unsplash.com/featured/?japanese,restaurant,logo" 
+              alt="Restaurant logo" 
+              className="w-full h-full object-cover"
+            />
+          </div>
           <h1 className="text-3xl font-serif font-medium">Welcome Back</h1>
           <p className="text-sm text-izakaya-darkgray mt-2">おかえりなさい</p>
         </div>
@@ -97,6 +105,9 @@ const Login = () => {
             >
               Create Account
             </Button>
+          </p>
+          <p className="text-xs text-izakaya-darkgray mt-6">
+            By continuing, you agree to our Terms of Service and Privacy Policy
           </p>
         </div>
       </div>
