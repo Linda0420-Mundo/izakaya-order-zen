@@ -15,6 +15,7 @@ import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import Favorites from "./pages/Favorites";
 import OrderHistory from "./pages/OrderHistory";
+import Orders from "./pages/Orders";
 import NotFound from "./pages/NotFound";
 import Login from "./pages/Login";
 import Payment from "./pages/Payment";
@@ -38,10 +39,10 @@ const App = () => (
               <Route path="/checkout" element={<Checkout />} />
               <Route path="/favorites" element={<Favorites />} />
               <Route path="/order-history" element={<OrderHistory />} />
+              <Route path="/orders" element={<Orders />} />
               <Route path="/login" element={<Login />} />
               <Route path="/payment" element={<Payment />} />
               <Route path="/order-confirmation" element={<OrderConfirmation />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>

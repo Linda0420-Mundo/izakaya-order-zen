@@ -14,19 +14,36 @@ import {
 import { useForm } from 'react-hook-form';
 import { LogIn } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
+import { zodResolver } from '@hookform/resolvers/zod';
+import * as z from 'zod';
+import { useToast } from '@/components/ui/use-toast';
 
-interface LoginFormValues {
-  email: string;
-  password: string;
-}
+const loginSchema = z.object({
+  email: z.string().email('Please enter a valid email address'),
+  password: z.string().min(6, 'Password must be at least 6 characters'),
+});
+
+type LoginFormValues = z.infer<typeof loginSchema>;
 
 const Login = () => {
   const navigate = useNavigate();
-  const form = useForm<LoginFormValues>();
+  const { toast } = useToast();
+  
+  const form = useForm<LoginFormValues>({
+    resolver: zodResolver(loginSchema),
+    defaultValues: {
+      email: '',
+      password: '',
+    },
+  });
 
   const onSubmit = (data: LoginFormValues) => {
     console.log(data);
-    // TODO: Implement login logic
+    // TODO: Implement login logic with Supabase
+    toast({
+      title: "Login Successful",
+      description: "Welcome back!",
+    });
     navigate('/menu');
   };
 

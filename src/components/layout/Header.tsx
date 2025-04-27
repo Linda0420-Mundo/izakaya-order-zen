@@ -1,5 +1,4 @@
-
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Menu, ShoppingCart, User, Bell } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -31,7 +30,8 @@ const Header = () => {
               <DropdownMenuContent align="start" className="w-56 bg-white">
                 <DropdownMenuItem onClick={() => navigate('/')}>Home</DropdownMenuItem>
                 <DropdownMenuItem onClick={() => navigate('/menu')}>Menu</DropdownMenuItem>
-                <DropdownMenuItem onClick={() => navigate('/orders')}>My Orders</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => navigate('/orders')}>Orders</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => navigate('/order-history')}>Order History</DropdownMenuItem>
                 <DropdownMenuItem onClick={() => navigate('/favorites')}>Favorites</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -51,6 +51,7 @@ const Header = () => {
             <Button variant="ghost" onClick={() => navigate('/')}>Home</Button>
             <Button variant="ghost" onClick={() => navigate('/menu')}>Menu</Button>
             <Button variant="ghost" onClick={() => navigate('/orders')}>Orders</Button>
+            <Button variant="ghost" onClick={() => navigate('/order-history')}>Order History</Button>
             <Button variant="ghost" onClick={() => navigate('/favorites')}>Favorites</Button>
           </nav>
         )}
@@ -74,7 +75,7 @@ const Header = () => {
             )}
           </Button>
           
-          <Button variant="ghost" size="icon" onClick={() => navigate('/account')}>
+          <Button variant="ghost" size="icon" onClick={() => navigate('/login')}>
             <User className="h-5 w-5" />
           </Button>
         </div>
