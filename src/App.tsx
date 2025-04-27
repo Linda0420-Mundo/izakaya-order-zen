@@ -12,6 +12,7 @@ import Index from "./pages/Index";
 import Menu from "./pages/Menu";
 import ItemDetail from "./pages/ItemDetail";
 import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
 import Favorites from "./pages/Favorites";
 import OrderHistory from "./pages/OrderHistory";
 import NotFound from "./pages/NotFound";
